@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9af31d3-fa5f-4a9a-89dd-d83dc811522c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_46.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_46_bin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/edf605fe-ac34-47db-a933-30b050cc7cfc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/edf605fe-ac34-47db-a933-30b050cc7cfc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_45_bin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Bean/LoginBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Bean/LoginBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/LoginControllerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Control/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/DAO/DB_Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/DAO/DB_Connection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/DAO/LoginDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/DAO/LoginDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/Query.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/UserSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/UserSingleton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progettoClassroomStandAlone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/progettoClassroomStandAlone.iml" afterDir="false" />
-    </list>
+    <list default="true" id="b9af31d3-fa5f-4a9a-89dd-d83dc811522c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -128,7 +95,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -297,7 +264,8 @@
     <option name="totallyTimeSpent" value="18281000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
