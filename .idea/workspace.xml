@@ -72,11 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfPageControllerGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfPageControllerGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boundary/ProfPageControllerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12496">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,6 +198,11 @@
             <path>
               <item name="progettoClassroomStandAlone" type="b2602c69:ProjectViewProjectNode" />
               <item name="Stand-alone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="progettoClassroomStandAlone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stand-alone" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="progettoClassroomStandAlone" type="b2602c69:ProjectViewProjectNode" />
@@ -368,12 +383,12 @@
       <workItem from="1530695446399" duration="55000" />
       <workItem from="1530695949426" duration="5601000" />
       <workItem from="1530782562827" duration="3708000" />
-      <workItem from="1530797955934" duration="2667000" />
+      <workItem from="1530797955934" duration="3366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26086000" />
+    <option name="totallyTimeSpent" value="26785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -419,17 +434,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Boundary/ProfPageGUI.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/ProfPageControllerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -661,6 +665,14 @@
       </provider>
     </entry>
     <entry file="das://edf605fe-ac34-47db-a933-30b050cc7cfc/schema/dbesame/table/users" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12496">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
