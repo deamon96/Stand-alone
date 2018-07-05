@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9af31d3-fa5f-4a9a-89dd-d83dc811522c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Boundary/ProfPageControllerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="b9af31d3-fa5f-4a9a-89dd-d83dc811522c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,6 +25,17 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="dbesame@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dbesame@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dbesame@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dbesame: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -62,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfPageControllerGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProfPageControllerGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boundary/ProfPageControllerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -70,6 +77,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users" pinned="false" current-in-tab="true">
+        <entry file="das://edf605fe-ac34-47db-a933-30b050cc7cfc/schema/dbesame/table/users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -122,7 +138,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="181" />
     <option name="y" value="-14" />
     <option name="width" value="1294" />
@@ -190,7 +206,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/SceneBuilder/SceneBuilder/SceneBuilder.exe" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -284,31 +300,33 @@
       <workItem from="1530634863103" duration="4818000" />
       <workItem from="1530695446399" duration="55000" />
       <workItem from="1530695949426" duration="5601000" />
-      <workItem from="1530782562827" duration="3298000" />
+      <workItem from="1530782562827" duration="3708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24003000" />
+    <option name="totallyTimeSpent" value="24413000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3287037" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3985122" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3985122" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3287037" />
       <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32943678" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13177083" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13177083" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15416667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,9 +339,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32943678" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3287037" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,13 +349,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Boundary/LoginControllerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -580,6 +589,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://edf605fe-ac34-47db-a933-30b050cc7cfc/schema/dbesame/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
