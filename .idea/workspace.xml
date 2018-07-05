@@ -300,12 +300,12 @@
       <workItem from="1530634863103" duration="4818000" />
       <workItem from="1530695446399" duration="55000" />
       <workItem from="1530695949426" duration="5601000" />
-      <workItem from="1530782562827" duration="3708000" />
+      <workItem from="1530782562827" duration="5342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24413000" />
+    <option name="totallyTimeSpent" value="26047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -657,7 +657,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
