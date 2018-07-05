@@ -1,6 +1,5 @@
 package Boundary;
 
-import Control.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -9,15 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import Control.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SecretaryPageControllerGUI implements Initializable{
+public class ProfPageControllerGUI implements Initializable {
     @FXML
     private DatePicker dataDP;
     @FXML
@@ -29,9 +26,7 @@ public class SecretaryPageControllerGUI implements Initializable{
     @FXML
     private Button logoutB;
     @FXML
-    private Button inserisciB;
-    @FXML
-    private Button mostraPrenotazioniB;
+    private Button prenotazioniAttiveB;
     @FXML
     private Button miePrenotazioniB;
     @FXML
@@ -39,19 +34,35 @@ public class SecretaryPageControllerGUI implements Initializable{
     @FXML
     private Button eliminaPrenotazioneB;
     @FXML
-    private Button nuovoAnnoB;
+    private Button visualizzaSessioniB;
     @FXML
-    private Button modificaAnnoB;
+    private Button storicoB;
     @FXML
-    private Button nuovaSessioneB;
+    private RadioButton proiettore;
     @FXML
-    private Button modificaSessioneB;
+    private RadioButton microfono;
+    @FXML
+    private RadioButton lavagna;
+    @FXML
+    private RadioButton lavagnaInterattiva;
+    @FXML
+    private RadioButton cavoEthernet;
+    @FXML
+    private RadioButton preseIndividuali;
     @FXML
     private Label alert;
 
+    private boolean proiettore01;
+    private boolean microfono01;
+    private boolean lavagna01;
+    private boolean lavagnaInterattiva01;
+    private boolean cavoEthernet01;
+    private boolean preseIndividuali01;
+
+
     public void istanziaSPageGUI(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/boundary/SecretaryPageGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/boundary/ProfPageGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
             //Imposta il root relativo alla schermata di Login.
         }catch (Exception er){
@@ -66,18 +77,16 @@ public class SecretaryPageControllerGUI implements Initializable{
         cercaB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                proiettore01 = proiettore.isSelected();
+                microfono01 = microfono.isSelected();
+                lavagna01 = lavagna.isSelected();
+                lavagnaInterattiva01 = lavagnaInterattiva.isSelected();
+                cavoEthernet01 = cavoEthernet.isSelected();
+                preseIndividuali01 = preseIndividuali.isSelected();
             }
         });
 
-        inserisciB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
-
-        mostraPrenotazioniB.setOnAction(new EventHandler<ActionEvent>() {
+        prenotazioniAttiveB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
@@ -105,28 +114,14 @@ public class SecretaryPageControllerGUI implements Initializable{
             }
         });
 
-        nuovoAnnoB.setOnAction(new EventHandler<ActionEvent>() {
+        visualizzaSessioniB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
             }
         });
 
-        modificaAnnoB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
-
-        nuovaSessioneB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
-
-        modificaSessioneB.setOnAction(new EventHandler<ActionEvent>() {
+        storicoB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
