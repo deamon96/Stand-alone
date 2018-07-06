@@ -4,7 +4,6 @@ import Entity.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +17,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -27,16 +26,17 @@ import java.util.ResourceBundle;
 public class PrenotationControllerPopUp implements Initializable {
     private ArrayList<String> auleDisponibili;
     @FXML
-    private TableView<Room> auleTV;
+    private TableView auleTV;
     @FXML
-    private TableColumn<Room, String> nomeTC;
+    private TableColumn nomeTC;
     @FXML
     private TextField nomeAulaTF;
     @FXML
     private Button prenotaB;
     @FXML
     private Button indietroB;
-    private ObservableList<Room> listaAule = null;
+
+    private ObservableList<Room> listaAule;
 
     public void setAuleDisponibili(ArrayList<String> disponibili){
         this.auleDisponibili = disponibili;
@@ -44,10 +44,6 @@ public class PrenotationControllerPopUp implements Initializable {
 
     public void istanziaPopUp(){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Aule disponibili");
-            stage.setScene(new Scene(root, 300, 450));
             listaAule = FXCollections.observableArrayList();
             for (int i = 0;  i < auleDisponibili.size(); i++){
                 Room room = new Room();
@@ -59,10 +55,18 @@ public class PrenotationControllerPopUp implements Initializable {
                 auleTV.setItems(null);
                 auleTV.setItems(listaAule);
             }
+
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Aule disponibili");
+            stage.setScene(new Scene(root, 300, 450));
             stage.show();
-        }catch (Exception er){
-            System.err.println(er.getMessage()+"\n");
+        }catch (NullPointerException er){
+            System.out.println("-----Null Pointer Exception-----");
             er.printStackTrace();
+        }catch (IOException nPE){
+            System.out.println("-----IO Exception-----");
+            nPE.printStackTrace();
         }
     }
 
