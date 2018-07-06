@@ -3,6 +3,7 @@ package Boundary;
 import Bean.Disponible_RoomBean;
 import Bean.SessionBean;
 import Control.Controller;
+import Utils.PrenotationSingleton;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -114,11 +115,10 @@ public class SecretaryPageControllerGUI implements Initializable{
                         PrenotationControllerPopUp controllerPopUp = new PrenotationControllerPopUp();
 
                         //PopUp
-                        controllerPopUp.setAuleDisponibili(r.getNome());
+                        PrenotationSingleton.getInstance().setListaAule(r.getNome());
                         controllerPopUp.istanziaPopUp();
                         //--//
 
-                        System.out.println("ciao");
                         for(int i = 0; i < r.getNome().size(); i++){
                             System.out.println(r.getNome().get(i));
                         }

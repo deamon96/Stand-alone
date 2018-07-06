@@ -1,6 +1,7 @@
 package Boundary;
 
 import Entity.Room;
+import Utils.PrenotationSingleton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,9 +26,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PrenotationControllerPopUp implements Initializable {
-    private ArrayList<String> auleDisponibili;
     @FXML
-    private TableView auleTV;
+    private TableView<Room> auleTV = new TableView<>();
     @FXML
     private TableColumn nomeTC;
     @FXML
@@ -36,41 +37,56 @@ public class PrenotationControllerPopUp implements Initializable {
     @FXML
     private Button indietroB;
 
-    private ObservableList<Room> listaAule;
-
-    public void setAuleDisponibili(ArrayList<String> disponibili){
-        this.auleDisponibili = disponibili;
-    }
-
     public void istanziaPopUp(){
         try{
-            listaAule = FXCollections.observableArrayList();
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Aule disponibili");
+            stage.setScene(new Scene(root, 300, 450));
+            stage.show();
+        }catch (IOException er){
+            System.out.println("-----IO Exception-----");
+            er.printStackTrace();
+        }
+    }
+
+    public void initialize(URL location, ResourceBundle resource){
+
+        ArrayList<String> auleDisponibili = PrenotationSingleton.getInstance().getListaAule();
+        ObservableList<Room> listaAule = FXCollections.observableArrayList();
+
+        try{
             for (int i = 0;  i < auleDisponibili.size(); i++){
                 Room room = new Room();
                 room.setNome(auleDisponibili.get(i));
                 listaAule.add(room);
             }
             if (auleTV != null){
-                nomeTC.setCellValueFactory(new PropertyValueFactory<>("name"));
+                nomeTC.setCellValueFactory(new PropertyValueFactory<>("nome"));
                 auleTV.setItems(null);
                 auleTV.setItems(listaAule);
             }
-
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Aule disponibili");
-            stage.setScene(new Scene(root, 300, 450));
-            stage.show();
-        }catch (NullPointerException er){
+        }catch (NullPointerException nPE){
             System.out.println("-----Null Pointer Exception-----");
-            er.printStackTrace();
-        }catch (IOException nPE){
-            System.out.println("-----IO Exception-----");
             nPE.printStackTrace();
         }
-    }
 
-    public void initialize(URL location, ResourceBundle resource){
+        auleTV.addEventHandler(MouseEvent.MOUSE_CLICKED,(event -> {
+            try{
+                String nome = auleTV.getSelectionModel().getSelectedItem().getNome();
+                nomeAulaTF.setText(nome);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }));
+
+        prenotaB.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+
         indietroB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
