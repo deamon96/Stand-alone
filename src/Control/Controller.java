@@ -1,8 +1,16 @@
 package Control;
 
+import Bean.Disponible_RoomBean;
+import Bean.Prenotation_Bean;
+import Bean.SessionBean;
+import DAO.DisponibleRooms_Secr;
+import DAO.Find_Session;
 import DAO.LoginDB;
 import Entity.User;
+import Utils.PrenotationBeanSingleton;
 import Utils.UserSingleton;
+
+import java.time.LocalTime;
 
 public class Controller {
 
@@ -20,14 +28,14 @@ public class Controller {
         Disponible_RoomBean showDatabase = DisponibleRooms_Prof.show(timeInizio, timeFine, dateSearch, microfono, proiettore, lavagna, lavElettronica, ethernet, presa, posti);
         return showDatabase;
     }
-
+*/
     //------AULE DIPONIBILI SEGRETARIA--------------//
 
     public Disponible_RoomBean show_Secretary(LocalTime timeInizio, LocalTime timeFine, String dateSearch) {
         Disponible_RoomBean showDatabase = DisponibleRooms_Secr.show_Secretary(timeInizio, timeFine, dateSearch);
         return showDatabase;
     }
-
+/*
     //-----------PRENOTAZIONI EFFETUATE SEGRETARIA----------------//
 
     public ArrayList<Room> show_s() {
@@ -150,7 +158,7 @@ public class Controller {
         singleton.setUser(u);
 
     }
-/*
+
     //-----------------BEAN----------------------//
 
     public void createPrenotationBean(LocalTime inizio, LocalTime fine, String date, String sessione){
@@ -159,7 +167,7 @@ public class Controller {
         PrenotationBeanSingleton.getInstance().setPrenotation_bean(prenotation_bean);
 
     }
-
+/*
     //--------------------ANNI ACCADEMICI--------------------------//
 
     public boolean newYear(String datainizio, String datafine){
@@ -207,7 +215,7 @@ public class Controller {
         Modify_Session modify_session = new Modify_Session();
         return modify_session.modify(newinizio, newfine, session, newTipo);
     }
-
+*/
     //-------------------TROVA SESSIONE PER PRENOTAZIONE IN BASE ALLA DATA DI PRENOTAZIONE I UN AULA--------------//
 
     public SessionBean trovaSessione(String dataPrenotazione){
@@ -215,7 +223,7 @@ public class Controller {
         Find_Session find_session = new Find_Session();
         return find_session.find(dataPrenotazione);
     }
-
+/*
     public void createPrenotationBean(String nome, LocalTime inizio, LocalTime fine, String date, String tipo){
         Prenotation_Bean prenotation_bean = new Prenotation_Bean(nome, inizio, fine, date, tipo);
     }
