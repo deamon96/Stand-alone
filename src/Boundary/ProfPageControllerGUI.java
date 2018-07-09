@@ -1,5 +1,11 @@
 package Boundary;
 
+import Bean.Disponible_RoomBean;
+import Bean.Prenotation_Bean;
+import Bean.SessionBean;
+import Utils.PrenotationBeanSingleton;
+import Utils.PrenotationSingleton;
+import Utils.UserSingleton;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -12,6 +18,9 @@ import javafx.scene.control.*;
 import Control.Controller;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.ResourceBundle;
 
 public class ProfPageControllerGUI implements Initializable {
@@ -21,6 +30,8 @@ public class ProfPageControllerGUI implements Initializable {
     private TextField startTF;
     @FXML
     private TextField endTF;
+    @FXML
+    private TextField noPostiTF;
     @FXML
     private Button cercaB;
     @FXML
@@ -52,15 +63,11 @@ public class ProfPageControllerGUI implements Initializable {
     @FXML
     private Label alert;
 
-    private boolean proiettore01;
-    private boolean microfono01;
-    private boolean lavagna01;
-    private boolean lavagnaInterattiva01;
-    private boolean cavoEthernet01;
-    private boolean preseIndividuali01;
+    private String proiettore01 = "no"; private String microfono01 = "no"; private String lavagna01 = "no";
+    private String lavagnaInterattiva01 = "no"; private String cavoEthernet01 = "no";
+    private String preseIndividuali01 = "no";
 
-
-    public void istanziaSPageGUI(Event e){
+    public void istanziaPPageGUI(Event e){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/boundary/ProfPageGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
@@ -73,16 +80,86 @@ public class ProfPageControllerGUI implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
 
         alert.setVisible(false);
+        Controller controller = new Controller();
 
         cercaB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                proiettore01 = proiettore.isSelected();
-                microfono01 = microfono.isSelected();
-                lavagna01 = lavagna.isSelected();
-                lavagnaInterattiva01 = lavagnaInterattiva.isSelected();
-                cavoEthernet01 = cavoEthernet.isSelected();
-                preseIndividuali01 = preseIndividuali.isSelected();
+
+
+                if (proiettore.isSelected()){proiettore01 = "si";}
+                if (microfono.isSelected()){microfono01 = "si";}
+                if (lavagna.isSelected()){lavagna01 = "si";}
+                if (lavagnaInterattiva.isSelected()){lavagnaInterattiva01 = "si";}
+                if (cavoEthernet.isSelected()){cavoEthernet01 = "si";}
+                if (preseIndividuali.isSelected()){preseIndividuali01 = "si";}
+
+                Disponible_RoomBean r;
+                LocalDate date = dataDP.getValue();
+                String oraInizio = startTF.getText();
+                String oraFine = endTF.getText();
+                if (oraInizio == null || oraFine == null || date == null){
+                    alert.setText("Completare tutti i campi!");
+                    alert.setVisible(true);
+                }else {
+                    alert.setVisible(false);
+                    try{
+                        LocalTime inizio = LocalTime.parse(oraInizio);
+                        LocalTime fine = LocalTime.parse(oraFine);
+                        String data = date.toString();
+                        r = controller.show(inizio, fine, data, microfono01, proiettore01, lavagna01,
+                                lavagnaInterattiva01, cavoEthernet01, preseIndividuali01,
+                                Integer.parseInt(noPostiTF.getText()));
+
+                        if (r.getNome().isEmpty()){
+                            alert.setText("Non ci sono aule prenotabili");
+                        }
+
+                        SessionBean s = controller.trovaSessione(data);
+
+                        if (s.getDataInizio() == null){
+                            alert.setText("La data inserita è fuori da ogni sessione");
+                            alert.setVisible(true);
+                        }
+
+                        SessionBean sessionBean = new SessionBean();
+                        sessionBean.setDataInizio(s.getDataInizio());
+                        sessionBean.setDataFine(s.getDataFine());
+                        sessionBean.setTipo(s.getTipo());
+
+                        String sessione = sessionBean.getDataInizio()+"/"+sessionBean.getDataFine();
+
+                        controller.createPrenotationBean(inizio, fine, data, sessione);
+
+                        PrenotationControllerPopUp controllerPopUp = new PrenotationControllerPopUp();
+
+                        //PopUp
+                        PrenotationSingleton.getInstance().setListaAule(r.getNome());
+                        controllerPopUp.istanziaPopUp(event);
+                        //--//
+
+                        Prenotation_Bean bean = new Prenotation_Bean(inizio, fine, data, "Sessione "+
+                                sessionBean.getTipo()+" Inizio: "+ sessionBean.getDataInizio()+", Fine: "+
+                                sessionBean.getDataFine());
+                        new PrenotationBeanSingleton().setPrenotation_bean(bean);
+
+                        for(int i = 0; i < r.getNome().size(); i++){
+                            System.out.println(r.getNome().get(i));
+                        }
+                    }catch (DateTimeParseException e){
+                        alert.setText("Formato dati inseriti errato!");
+                        alert.setVisible(true);
+                        System.out.println(e.getMessage());
+                    }catch (NullPointerException n){
+                        System.out.println(n.getMessage() + "\n we we we \n" + n.getCause());
+                        n.printStackTrace();
+                    }catch (NumberFormatException f){
+                        alert.setText("Numero di posti non valido!");
+                        alert.setVisible(true);
+                        System.out.println(f.getMessage());
+                    }
+                }
+
             }
         });
 
@@ -131,6 +208,7 @@ public class ProfPageControllerGUI implements Initializable {
         logoutB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                UserSingleton.getInstance().setUser(null);
                 LoginControllerGUI loginControllerGUI = new LoginControllerGUI();
                 loginControllerGUI.istanziaLoginGUI(event);
             }

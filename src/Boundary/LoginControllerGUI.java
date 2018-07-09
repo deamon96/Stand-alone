@@ -2,6 +2,8 @@ package Boundary;
 
 import Bean.LoginBean;
 import DAO.DB_Connection;
+import Entity.User;
+import Utils.UserSingleton;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -85,11 +87,14 @@ public class LoginControllerGUI extends Application implements Initializable{
                     LoginBean loginBean = new LoginBean();
                     loginBean.setUsername(usernameTF.getText());
                     loginBean.setPassword(passwordPF.getText());
-                    loginBean.validate();
                     System.out.println(loginBean.getUsername());
                     if (loginBean.validate()){
-                        SecretaryPageControllerGUI sPageController = new SecretaryPageControllerGUI();
-                        sPageController.istanziaSPageGUI(event);
+                        User user = UserSingleton.getInstance().getUser();
+                        if (user.getType().equals("1")){
+                            new SecretaryPageControllerGUI().istanziaSPageGUI(event);
+                        }else if (user.getType().equals("0")){
+                            new ProfPageControllerGUI().istanziaPPageGUI(event);
+                        }
                     } else {
                         alert.setVisible(true);
                     }

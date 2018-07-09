@@ -8,6 +8,7 @@ public class Prenotation_Bean {
     private LocalTime fine;
     private String date;
     private String sessione;
+    private String aula;
 
     public Prenotation_Bean(LocalTime inizio, LocalTime fine, String date, String sessione) {
         this.inizio = inizio;
@@ -46,5 +47,13 @@ public class Prenotation_Bean {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setAula(String aula) {
+        this.aula = aula;
+    }
+
+    public String getAula(){
+        return aula;
     }
 }

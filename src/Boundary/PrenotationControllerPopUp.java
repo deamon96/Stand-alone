@@ -1,10 +1,14 @@
 package Boundary;
 
+import Bean.Prenotation_Bean;
 import Entity.Room;
+import Utils.PrenotationBeanSingleton;
 import Utils.PrenotationSingleton;
+import Utils.UserSingleton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,13 +41,14 @@ public class PrenotationControllerPopUp implements Initializable {
     @FXML
     private Button indietroB;
 
-    public void istanziaPopUp(){
+    public void istanziaPopUp(Event e){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
-            Stage stage = new Stage();
+            ((Node) (e.getSource())).getScene().setRoot(root);
+           /* Stage stage = new Stage();
             stage.setTitle("Aule disponibili");
             stage.setScene(new Scene(root, 300, 450));
-            stage.show();
+            stage.show();*/
         }catch (IOException er){
             System.out.println("-----IO Exception-----");
             er.printStackTrace();
@@ -54,6 +59,7 @@ public class PrenotationControllerPopUp implements Initializable {
 
         ArrayList<String> auleDisponibili = PrenotationSingleton.getInstance().getListaAule();
         ObservableList<Room> listaAule = FXCollections.observableArrayList();
+        prenotaB.setDisable(true);
 
         try{
             for (int i = 0;  i < auleDisponibili.size(); i++){
@@ -71,10 +77,12 @@ public class PrenotationControllerPopUp implements Initializable {
             nPE.printStackTrace();
         }
 
+        assert auleTV != null;
         auleTV.addEventHandler(MouseEvent.MOUSE_CLICKED,(event -> {
             try{
                 String nome = auleTV.getSelectionModel().getSelectedItem().getNome();
                 nomeAulaTF.setText(nome);
+                prenotaB.setDisable(false);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -83,14 +91,27 @@ public class PrenotationControllerPopUp implements Initializable {
         prenotaB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
+                bean.setAula(nomeAulaTF.getText());
+                if (UserSingleton.getInstance().getUser().getType().equals("1")){
+                    Secr_PrenotationControllerGUI sPage = new Secr_PrenotationControllerGUI();
+                    sPage.istanziaSPageGUI(event);
+                }else if (UserSingleton.getInstance().getUser().getType().equals("0")){
+                    Prof_PrenotationControllerGUI pPage = new Prof_PrenotationControllerGUI();
+                    pPage.istanziaPPageGUI(event);
+                }
             }
         });
 
         indietroB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ((Node) (event.getSource())).getScene().getWindow().hide();
+                //((Node) (event.getSource())).getScene().getWindow().hide();
+                if (UserSingleton.getInstance().getUser().getType().equals("1")){
+                    new SecretaryPageControllerGUI().istanziaSPageGUI(event);
+                }else if (UserSingleton.getInstance().getUser().getType().equals("0")){
+                    new ProfPageControllerGUI().istanziaPPageGUI(event);
+                }
             }
         });
     }

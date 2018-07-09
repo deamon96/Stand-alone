@@ -3,11 +3,10 @@ package Control;
 import Bean.Disponible_RoomBean;
 import Bean.Prenotation_Bean;
 import Bean.SessionBean;
-import DAO.DisponibleRooms_Secr;
-import DAO.Find_Session;
-import DAO.LoginDB;
+import DAO.*;
 import Entity.User;
 import Utils.PrenotationBeanSingleton;
+import Utils.SendMail;
 import Utils.UserSingleton;
 
 import java.time.LocalTime;
@@ -21,14 +20,14 @@ public class Controller {
         User u = loginDB.findByNameAndPassword(username, Password);
         return u;
     }
-/*    //------AULE DISPONIBILI PROFESSORE-------------//
+    //------AULE DISPONIBILI PROFESSORE-------------//
 
     public Disponible_RoomBean show(LocalTime timeInizio, LocalTime timeFine, String dateSearch, String microfono,
                                     String proiettore, String lavagna, String lavElettronica, String ethernet, String presa, int posti) {
         Disponible_RoomBean showDatabase = DisponibleRooms_Prof.show(timeInizio, timeFine, dateSearch, microfono, proiettore, lavagna, lavElettronica, ethernet, presa, posti);
         return showDatabase;
     }
-*/
+
     //------AULE DIPONIBILI SEGRETARIA--------------//
 
     public Disponible_RoomBean show_Secretary(LocalTime timeInizio, LocalTime timeFine, String dateSearch) {
@@ -62,7 +61,7 @@ public class Controller {
         ArrayList<RoomBean> rooms = All_Rooms.AllRooms();
         return rooms;
     }
-
+*/
     //----------------NUOVA PRENOTAZIONE PROFESSORE--------------//
 
     public boolean newPrenotationProfessore(String nameAula, String tipoPrenota, String dataPrenota, LocalTime timeInizioPrenota,
@@ -79,7 +78,7 @@ public class Controller {
         return insert_secretary.insert(nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, sessione, from);
 
     }
-
+/*
     //------------------CANCELLA PRENOTAZIONI GIÀ ESISTENTI CHE DANNO CONFLITTO E POI INSERISCI LA NUOVA PRENOTAZIONE-------------//
 
     public boolean deleteThenInsert(String nameAula, String tipoPrenota, String dataPrenota, LocalTime timeInizioPrenota,
@@ -125,7 +124,7 @@ public class Controller {
         return entryController.duplicateController(name, dataPrenota, timeInizioPrenota, timeFinePrenota);
 
     }
-
+*/
     //---------------CONTROLLO ENTRY VUOTE-------------//
 
     public boolean emptyControl(String name){
@@ -142,7 +141,7 @@ public class Controller {
         sendMail.inviaMail(dest, object, text);
 
     }
-
+/*
     //------------------------asdfasdfsdfasdfsf----------------------//
 
     public ArrayList<Room> storico(String datainizio, String datafine){
@@ -167,7 +166,7 @@ public class Controller {
         PrenotationBeanSingleton.getInstance().setPrenotation_bean(prenotation_bean);
 
     }
-/*
+
     //--------------------ANNI ACCADEMICI--------------------------//
 
     public boolean newYear(String datainizio, String datafine){
@@ -175,7 +174,7 @@ public class Controller {
         NewAccYear newAccYear = new NewAccYear();
         return newAccYear.newYaear(datainizio, datafine);
     }
-
+/*
     //------------------MOSTRA ANNI ACCADEMICI---------------------//
 
     public ArrayList<AccademicYearBean> showYears(){

@@ -1,9 +1,12 @@
 package Boundary;
 
 import Bean.Disponible_RoomBean;
+import Bean.Prenotation_Bean;
 import Bean.SessionBean;
 import Control.Controller;
+import Utils.PrenotationBeanSingleton;
 import Utils.PrenotationSingleton;
+import Utils.UserSingleton;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -66,7 +69,7 @@ public class SecretaryPageControllerGUI implements Initializable{
             ((Node) (e.getSource())).getScene().setRoot(root);
         }catch (Exception er){
             System.err.println(er.getMessage());
-        }
+         }
     }
 
     public void initialize(URL location, ResourceBundle resources){
@@ -116,8 +119,13 @@ public class SecretaryPageControllerGUI implements Initializable{
 
                         //PopUp
                         PrenotationSingleton.getInstance().setListaAule(r.getNome());
-                        controllerPopUp.istanziaPopUp();
+                        controllerPopUp.istanziaPopUp(event);
                         //--//
+
+                        Prenotation_Bean bean = new Prenotation_Bean(inizio, fine, data, "Sessione "+
+                                sessionBean.getTipo()+" Inizio: "+ sessionBean.getDataInizio()+", Fine: "+
+                                sessionBean.getDataFine());
+                        new PrenotationBeanSingleton().setPrenotation_bean(bean);
 
                         for(int i = 0; i < r.getNome().size(); i++){
                             System.out.println(r.getNome().get(i));
@@ -173,7 +181,7 @@ public class SecretaryPageControllerGUI implements Initializable{
         nuovoAnnoB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                new NewYearControllerGUI().istanziaNewYearGUI(event);
             }
         });
 
@@ -201,6 +209,7 @@ public class SecretaryPageControllerGUI implements Initializable{
         logoutB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                UserSingleton.getInstance().setUser(null);
                 LoginControllerGUI loginControllerGUI = new LoginControllerGUI();
                 loginControllerGUI.istanziaLoginGUI(event);
             }
