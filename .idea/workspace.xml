@@ -2,27 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f6139d3-2249-430a-863f-fd56f9a0b3b1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Bean/AccademicYearBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/Modify_AccYear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/Show_Acc_Year.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Year.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/AccademicYearBeanSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boundary/ModifySessionControllerGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boundary/ModifySessionControllerPopUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boundary/NewSessionControllerGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boundary/NewSessionControllerPopUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/Modify_Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/NewSess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/Show_Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/SessionBeanSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/NewYearControllerGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/ModifyYearControllerPopUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/ModifyYearControllerPopUp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/SecretaryPageControllerGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Control/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Utils/Query.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/Query.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,96 +86,160 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModifyYearControllerPopUp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3273#3274#0" expanded="true" />
-                <element signature="e#3336#3337#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Year.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Year.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="208" column="32" lean-forward="true" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Modify_AccYear.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DAO/Modify_AccYear.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="33" column="138" lean-forward="true" selection-start-line="33" selection-start-column="138" selection-end-line="33" selection-end-column="138" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Query.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/Query.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModifyYearControllerGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2182#2183#0" expanded="true" />
-                <element signature="e#2266#2267#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sessioni" pinned="false" current-in-tab="false">
-        <entry file="das://9c3631b3-3def-4e31-bf40-a4c0ae956d77/schema/dbesame/table/sessioni">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="anni_accademici" pinned="false" current-in-tab="false">
-        <entry file="das://9c3631b3-3def-4e31-bf40-a4c0ae956d77/schema/dbesame/table/anni_accademici">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModifyYearGUI.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearGUI.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ModifyYearControllerPopUp.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="50" column="9" selection-start-line="44" selection-start-column="8" selection-end-line="50" selection-end-column="9" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModifySessionControllerPopUp.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionControllerPopUp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="714">
+                  <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SecretaryPageControllerGUI.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="199" column="106" selection-start-line="199" selection-start-column="106" selection-end-line="199" selection-end-column="106" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModifySessionControllerGUI.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionControllerGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="191">
+                  <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Query.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Utils/Query.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="426">
+                  <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Modify_Session.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/DAO/Modify_Session.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="469">
+                  <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sessioni" pinned="false" current-in-tab="false">
+            <entry file="das://9c3631b3-3def-4e31-bf40-a4c0ae956d77/schema/dbesame/table/sessioni">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewSessionControllerPopUp.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/NewSessionControllerPopUp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1076">
+                  <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NewSessionControllerGUI.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/NewSessionControllerGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="437">
+                  <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModifySessionPopUp.fxml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionPopUp.fxml">
+              <provider selected="true" editor-type-id="text-editor" />
+              <provider editor-type-id="JavaFX-Scene-Builder" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ModifyYearControllerPopUp.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModifyYearControllerGUI.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="338">
+                  <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="244">
+                  <caret line="216" column="31" lean-forward="true" selection-start-line="216" selection-start-column="31" selection-end-line="216" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Modify_AccYear.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/DAO/Modify_AccYear.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2">
+                  <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -223,12 +286,21 @@
         <option value="$PROJECT_DIR$/src/Boundary/PrenotationControllerPopUp.java" />
         <option value="$PROJECT_DIR$/src/Utils/AccademicYearBeanSingleton.java" />
         <option value="$PROJECT_DIR$/src/DAO/Show_Acc_Year.java" />
-        <option value="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" />
-        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/Utils/Query.java" />
-        <option value="$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java" />
-        <option value="$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java" />
         <option value="$PROJECT_DIR$/src/DAO/Modify_AccYear.java" />
+        <option value="$PROJECT_DIR$/src/DAO/NewSess.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/NewSessionControllerPopUp.java" />
+        <option value="$PROJECT_DIR$/src/Entity/Session.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java" />
+        <option value="$PROJECT_DIR$/src/DAO/Show_Session.java" />
+        <option value="$PROJECT_DIR$/src/Utils/SessionBeanSingleton.java" />
+        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/ModifySessionControllerPopUp.java" />
+        <option value="$PROJECT_DIR$/src/DAO/Modify_Session.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/NewSessionControllerGUI.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java" />
+        <option value="$PROJECT_DIR$/src/Boundary/ModifySessionControllerGUI.java" />
       </list>
     </option>
   </component>
@@ -247,7 +319,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -258,7 +330,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,8 +385,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -417,31 +489,42 @@
       <workItem from="1530872427169" duration="14302000" />
       <workItem from="1531126677271" duration="19800000" />
       <workItem from="1531170247576" duration="11086000" />
+      <workItem from="1531221267173" duration="7501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59828000" />
+    <option name="totallyTimeSpent" value="67329000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32897604" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3278867" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32897604" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32995737" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.31699347" />
+      <window_info anchor="bottom" id="Database Changes" order="1" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.31699347" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32897604" />
       <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Database Console" order="0" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32897604" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14712153" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.23987207" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -458,32 +541,32 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.32943678" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Database Console" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="4" weight="0.31699347" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.31699347" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14712153" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32897604" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info id="Image Layers" order="6" />
-      <window_info id="Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.416122" />
-      <window_info anchor="bottom" id="Database Console" order="0" />
-      <window_info anchor="right" id="Database" order="6" weight="0.24147122" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.23987207" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.3278867" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3278867" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32995737" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
@@ -496,70 +579,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="84" />
+      <option name="time" value="87" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Boundary/Secr_PrenotationControllerPOPUP.java" />
-    <entry file="file://$PROJECT_DIR$/src/Boundary/Secr_PrenotationPOPUP.fxml" />
-    <entry file="file://$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/PrenotationPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/progettoClassroomStandAlone/Boundary/ProfPageGUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boundary/PrenotationPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/EntryController.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bean/Disponible_RoomBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bean/SessionBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/UserSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bean/Prenotation_Bean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -582,8 +605,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/ProfPageGUI.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/DisponibleRooms_Prof.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -603,16 +626,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/Secr_PrenotationGUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/Prof_PrenotationGUI.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/Insert_Prof.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -678,8 +701,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/NewYearGUI.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/LoginControllerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -726,23 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/AccademicYearBeanSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="20" column="99" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boundary/NewYearControllerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/Show_Acc_Year.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -750,29 +756,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="189" column="103" selection-start-line="189" selection-start-column="103" selection-end-line="189" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearPopUp.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearGUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Formatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="2453" column="21" selection-start-line="2453" selection-start-column="21" selection-end-line="2453" selection-end-column="21" />
-          <folding>
-            <element signature="e#101735#101736#0" expanded="true" />
-            <element signature="e#101781#101782#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,10 +778,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://9c3631b3-3def-4e31-bf40-a4c0ae956d77/schema/dbesame/table/anni_accademici">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/NewYearControllerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="36" column="62" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/NewSess.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Year.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/Show_Session.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/SessionBeanSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/AccademicYearBeanSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="99" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/SecretaryPageControllerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="199" column="106" selection-start-line="199" selection-start-column="106" selection-end-line="199" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/mysql-connector-java-5.1.45-bin.jar!/com/mysql/jdbc/MysqlIO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="345" selection-start-line="345" selection-end-line="345" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Query.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+        <state relative-caret-position="426">
+          <caret line="113" column="25" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -797,55 +871,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://9c3631b3-3def-4e31-bf40-a4c0ae956d77/schema/dbesame/table/anni_accademici">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Boundary/NewSessionControllerPopUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="208" column="32" lean-forward="true" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
+        <state relative-caret-position="1076">
+          <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
-            <element signature="e#2266#2267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Year.java">
+    <entry file="file://$PROJECT_DIR$/src/Boundary/NewSessionControllerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="437">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java">
+    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionPopUp.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionControllerPopUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+        <state relative-caret-position="714">
+          <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3273#3274#0" expanded="true" />
-            <element signature="e#3336#3337#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/Modify_AccYear.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="138" lean-forward="true" selection-start-line="33" selection-start-column="138" selection-end-line="33" selection-end-column="138" />
+        <state relative-caret-position="2">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerPopUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="50" column="9" selection-start-line="44" selection-start-column="8" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="216" column="31" lean-forward="true" selection-start-line="216" selection-start-column="31" selection-end-line="216" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/Modify_Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifyYearControllerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Boundary/ModifySessionControllerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

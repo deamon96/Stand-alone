@@ -23,7 +23,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ModifyYearControllerPopUp implements Initializable {
+public class NewSessionControllerPopUp implements Initializable {
     @FXML
     private TableView<Year> yearTV = new TableView<>();
     @FXML
@@ -35,15 +35,14 @@ public class ModifyYearControllerPopUp implements Initializable {
     @FXML
     private TextField yearTF;
     @FXML
-    private Button modificaB;
+    private Button apriB;
     @FXML
     private Button indietroB;
-
     private Year year;
 
     public void istanziaPopUp(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/ModifyYearPopUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/NewSessionPopUp.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
         }catch (IOException er){
             System.out.println("-----IO Exception");
@@ -56,7 +55,7 @@ public class ModifyYearControllerPopUp implements Initializable {
         Controller controller = new Controller();
         ArrayList<AccademicYearBean> s = controller.showYears();
         ObservableList<Year> anniAccademici = FXCollections.observableArrayList();
-        modificaB.setDisable(true);
+        apriB.setDisable(true);
 
         try{
             for(int i = 0; i < s.size(); i++){
@@ -83,13 +82,13 @@ public class ModifyYearControllerPopUp implements Initializable {
                 LocalDate fine = yearTV.getSelectionModel().getSelectedItem().getFine();
                 year = new Year(inizio, fine);
                 yearTF.setText(nome);
-                modificaB.setDisable(false);
+                apriB.setDisable(false);
             }catch (Exception er){
                 er.printStackTrace();
             }
         }));
 
-        modificaB.setOnAction(new EventHandler<ActionEvent>() {
+        apriB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 AccademicYearBean bean = new AccademicYearBean();
@@ -98,7 +97,7 @@ public class ModifyYearControllerPopUp implements Initializable {
                 bean.setNome(year.getNome());
                 //bean.setNome(yearTF.getText().substring(0,4)+"/"+yearTF.getText().substring(5));
                 AccademicYearBeanSingleton.getInstance().setYearBean(bean);
-                new ModifyYearControllerGUI().istanziaModifyYearGUI(event);
+                new NewSessionControllerGUI().istanziaNewSessionGUI(event);
             }
         });
 

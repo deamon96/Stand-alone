@@ -192,16 +192,12 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         nuovaSessioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) { new NewSessionControllerPopUp().istanziaPopUp(event);}
         });
 
         modificaSessioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) { new ModifySessionControllerPopUp().istanziaPopUp(event);}
         });
 
         logoutB.setOnAction(new EventHandler<ActionEvent>() {

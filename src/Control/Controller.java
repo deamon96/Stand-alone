@@ -184,7 +184,7 @@ public class Controller {
         Show_Acc_Year show_acc_year = new Show_Acc_Year();
         return show_acc_year.show();
     }
-/*
+
     //-------------------SESSIONI-----------------------//
 
     public boolean newSess(String datainizio, String datafine, String tipo, String accYear){
@@ -200,7 +200,7 @@ public class Controller {
         Show_Session show_session = new Show_Session();
         return show_session.showAllSession();
     }
-*/
+
     //-------------------MODIFICA ANNO ACCADEMICO-----------//
 
     public boolean modAccYear(String newInizio, String newFine, String oldInizio, String oldFine){
@@ -208,7 +208,7 @@ public class Controller {
         Modify_AccYear modify_accYear = new Modify_AccYear();
         return modify_accYear.modify(newInizio, newFine, oldInizio, oldFine);
     }
-/*
+
     //-------------------MODIFICA SESSIONE-----------------//
 
     public boolean modifySession(String newinizio, String newfine, String session, String newTipo){
@@ -216,7 +216,7 @@ public class Controller {
         Modify_Session modify_session = new Modify_Session();
         return modify_session.modify(newinizio, newfine, session, newTipo);
     }
-*/
+
     //-------------------TROVA SESSIONE PER PRENOTAZIONE IN BASE ALLA DATA DI PRENOTAZIONE I UN AULA--------------//
 
     public SessionBean trovaSessione(String dataPrenotazione){

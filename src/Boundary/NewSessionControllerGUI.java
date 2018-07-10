@@ -14,28 +14,36 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ModifyYearControllerGUI implements Initializable {
+public class NewSessionControllerGUI implements Initializable {
     @FXML
     private DatePicker inizioDP;
     @FXML
     private DatePicker fineDP;
     @FXML
-    private Button modificaB;
+    private RadioButton invernaleRB;
+    @FXML
+    private RadioButton estivaRB;
+    @FXML
+    private RadioButton autunnaleRB;
+    @FXML
+    private RadioButton extraRB;
+    @FXML
+    private Button apriB;
     @FXML
     private Button indietroB;
     @FXML
     private Label alert;
 
-    public void istanziaModifyYearGUI(Event e) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/boundary/ModifyYearGUI.fxml"));
+    public void istanziaNewSessionGUI(Event e){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/boundary/NewSessionGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
-        } catch (Exception er) {
+        }catch (Exception er){
             System.err.println(er.getMessage());
         }
     }
@@ -46,37 +54,40 @@ public class ModifyYearControllerGUI implements Initializable {
 
         Controller controller = new Controller();
 
-        modificaB.setOnAction(new EventHandler<ActionEvent>() {
+        apriB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                extraRB.setSelected(true);
                 alert.setVisible(false);
 
-                LocalDate inizio = inizioDP.getValue();
-                LocalDate fine = fineDP.getValue();
+                String inizio = inizioDP.getValue().toString();
+                String fine = fineDP.getValue().toString();
+                String tipo;
 
-                if (inizio == null || fine == null){
+                if (invernaleRB.isSelected()){
+                    tipo = "Invernale";
+                }else if (estivaRB.isSelected()){
+                    tipo = "Estiva";
+                }else if (autunnaleRB.isSelected()){
+                    tipo = "Autunnale";
+                }else {
+                    tipo = "Extra";
+                }
+
+                if (inizio.equals("") || fine.equals("")){
                     alert.setText("Riempire entrambi i campi!");
                     alert.setVisible(true);
                 }else {
                     alert.setVisible(false);
                     AccademicYearBean bean = AccademicYearBeanSingleton.getInstance().getYearBean();
-                    if(controller.modAccYear(inizio.toString(), fine.toString(), bean.getDataInizio().toString(),
-                            bean.getDataFine().toString())){
-                        alert.setText("Modifica anno accademico avvenuta con successo!");
-                        alert.setVisible(true);
-                    }else {
-                        alert.setText("Ci sono sessioni non interamente coperte! Operazione annullata");
-                        alert.setVisible(true);
-                    }
+                    controller.newSess(inizio, fine, tipo, bean.getNome());
                 }
             }
         });
 
         indietroB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                new ModifyYearControllerPopUp().istanziaPopUp(event);
-            }
+            public void handle(ActionEvent event) {new NewSessionControllerPopUp().istanziaPopUp(event);}
         });
     }
 }
