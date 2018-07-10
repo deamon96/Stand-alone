@@ -187,9 +187,7 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         modificaAnnoB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) { new ModifyYearControllerPopUp().istanziaPopUp(event);}
         });
 
         nuovaSessioneB.setOnAction(new EventHandler<ActionEvent>() {
