@@ -7,3 +7,5 @@ public class Main {
         Application.launch(LoginControllerGUI.class, args);    //lancia il metodo start da LoginControllerGUI
     }
 }
+//Conferma aggiornamento.
+//1.61
