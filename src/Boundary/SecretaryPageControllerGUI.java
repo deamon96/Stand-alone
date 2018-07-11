@@ -159,9 +159,7 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         miePrenotazioniB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) { new Secr_SelfPControllerPopUp().istanziaPopUp(event);}
         });
 
         modificaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {

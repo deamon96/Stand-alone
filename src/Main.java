@@ -10,3 +10,4 @@ public class Main {
 //Conferma aggiornamento.
 //1.61 portatile
 //1.62 fisso
+//1.70 fisso

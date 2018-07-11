@@ -1,10 +1,8 @@
 package Control;
 
-import Bean.AccademicYearBean;
-import Bean.Disponible_RoomBean;
-import Bean.Prenotation_Bean;
-import Bean.SessionBean;
+import Bean.*;
 import DAO.*;
+import Entity.Room;
 import Entity.User;
 import Utils.PrenotationBeanSingleton;
 import Utils.SendMail;
@@ -36,14 +34,14 @@ public class Controller {
         Disponible_RoomBean showDatabase = DisponibleRooms_Secr.show_Secretary(timeInizio, timeFine, dateSearch);
         return showDatabase;
     }
-/*
+
     //-----------PRENOTAZIONI EFFETUATE SEGRETARIA----------------//
 
     public ArrayList<Room> show_s() {
         ArrayList<Room> rooms = ShowDatabase_Secr.show_secr();
         return rooms;
     }
-
+/*
     //--------------PRENOTAZIONI EFFETTUATE PROFESSORE---------------//
 
     public ArrayList<Room> showComplete_DB(){
@@ -56,14 +54,14 @@ public class Controller {
         ArrayList<Room> rooms = All_Prenotation.showAll();
         return rooms;
     }
-
+*/
     //-----------------TUTTE LE AULE-----------------------------------//
 
     public ArrayList<RoomBean> allRooms(){
         ArrayList<RoomBean> rooms = All_Rooms.AllRooms();
         return rooms;
     }
-*/
+
     //----------------NUOVA PRENOTAZIONE PROFESSORE--------------//
 
     public boolean newPrenotationProfessore(String nameAula, String tipoPrenota, String dataPrenota, LocalTime timeInizioPrenota,
@@ -80,7 +78,7 @@ public class Controller {
         return insert_secretary.insert(nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, sessione, from);
 
     }
-/*
+
     //------------------CANCELLA PRENOTAZIONI GIÀ ESISTENTI CHE DANNO CONFLITTO E POI INSERISCI LA NUOVA PRENOTAZIONE-------------//
 
     public boolean deleteThenInsert(String nameAula, String tipoPrenota, String dataPrenota, LocalTime timeInizioPrenota,
@@ -90,7 +88,7 @@ public class Controller {
         deleteThenInsert.deleteThenInsert(nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, sessione, from);
         return true;
     }
-
+/*
     //-----------------------MODIFICA PRENOTAZIONE------------------//
 
     public boolean modify(String ID, LocalTime start, LocalTime end, String date, String type){

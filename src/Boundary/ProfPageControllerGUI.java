@@ -193,9 +193,7 @@ public class ProfPageControllerGUI implements Initializable {
 
         visualizzaSessioniB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new ViewSessionControllerPopUp().istanziaPopUp(event);}
         });
 
         storicoB.setOnAction(new EventHandler<ActionEvent>() {
