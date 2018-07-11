@@ -41,13 +41,13 @@ public class Controller {
         ArrayList<Room> rooms = ShowDatabase_Secr.show_secr();
         return rooms;
     }
-/*
+
     //--------------PRENOTAZIONI EFFETTUATE PROFESSORE---------------//
 
     public ArrayList<Room> showComplete_DB(){
         return ShowCompleteDB.show_completeDB();
     }
-
+/*
     //-------------MOSTRA TUTTE LE PRENOTAZIONI (SEGRETARIA)-----------//
 
     public ArrayList<Room> allPrenotation(){
