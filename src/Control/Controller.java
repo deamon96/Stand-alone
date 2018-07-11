@@ -115,7 +115,7 @@ public class Controller {
         return delete.delete(ID);
 
     }
-
+*/
     //-----------CONTROLLO ENTRY DUPLICATE---------//
 
     public boolean duplicateControl(String name, String dataPrenota, LocalTime timeInizioPrenota, LocalTime timeFinePrenota){
@@ -124,7 +124,7 @@ public class Controller {
         return entryController.duplicateController(name, dataPrenota, timeInizioPrenota, timeFinePrenota);
 
     }
-*/
+
     //---------------CONTROLLO ENTRY VUOTE-------------//
 
     public boolean emptyControl(String name){

@@ -41,7 +41,7 @@ public class InsertControllerPopUp implements Initializable {
 
     public void istanziaPopUp(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/InsertPopUp.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
            /* Stage stage = new Stage();
             stage.setTitle("Aule disponibili");
@@ -63,7 +63,7 @@ public class InsertControllerPopUp implements Initializable {
         try{
             for (int i = 0; i < aule.size(); i++){
                 Room room = new Room();
-                room.setNome(aule.get(i).toString());
+                room.setNome(aule.get(i).getNome());
                 listaAule.add(room);
             }
             if (auleTV != null){
@@ -95,7 +95,11 @@ public class InsertControllerPopUp implements Initializable {
                 //TODO GUI
             }
         });
-    }
 
+        indietroB.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {new SecretaryPageControllerGUI().istanziaSPageGUI(event);}
+        });
+    }
 }
 

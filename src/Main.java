@@ -11,3 +11,5 @@ public class Main {
 //1.61 portatile
 //1.62 fisso
 //1.70 fisso
+//1.71 portatile
+//1.72 portatile

@@ -31,6 +31,10 @@ public class Insert_Secretary {
 
             stmt = conn.createStatement();
 
+            if (!controller.duplicateControl(nameAula, dataPrenota, timeInizioPrenota, timeFinePrenota)){
+                return false;
+            }
+
             String retrieveInformation = String.format(Query.retrieveUsername, from);
 
             System.out.println(retrieveInformation);

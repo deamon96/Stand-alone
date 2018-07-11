@@ -72,6 +72,8 @@ public class InsertControllerGUI implements Initializable {
 
     public void initialize(URL location, ResourceBundle resource){
 
+        Controller controller = new Controller();
+
         laureaRB.setSelected(true);
         Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
         dataTF.setText(bean.getDate()); startTF.setText(bean.getInizio().toString());
@@ -123,9 +125,18 @@ public class InsertControllerGUI implements Initializable {
                 alert.setVisible(false);
                 if (controllaDelegante()){
                     if (esameRB.isSelected()){
-                        new Controller().newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
+                        if (controller.newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
+                                bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText())){
+                            success();
+                            // APPOSTO
+                        }else {
+                            //TODO : ci stanno aule che danno fastidio ---> [PRE-EMPTION] OR [NON PRE-EMPTION]
+                            //si a premption allora DELETETHENINSERT
+                            //si a non preemption allora abort
+                        }
+                       /* new Controller().newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
                                 bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText());
-                        success();
+                        success();*/
                     }else if (conferenzaRB.isSelected()){
                         new Controller().newPrenotationSecretary(bean.getAula(), "conferenza", bean.getDate(),
                                 bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText());
