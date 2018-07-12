@@ -45,10 +45,6 @@ public class PrenotationControllerPopUp implements Initializable {
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
-           /* Stage stage = new Stage();
-            stage.setTitle("Aule disponibili");
-            stage.setScene(new Scene(root, 300, 450));
-            stage.show();*/
         }catch (IOException er){
             System.out.println("-----IO Exception-----");
             er.printStackTrace();

@@ -5,7 +5,6 @@ import Bean.RoomBean;
 import Control.Controller;
 import Entity.Room;
 import Utils.PrenotationBeanSingleton;
-import Utils.PrenotationSingleton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,7 +27,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class InsertControllerPopUp implements Initializable {
+public class ForcedControllerPopUp implements Initializable {
     @FXML
     private TableView<Room> auleTV = new TableView<>();
     @FXML
@@ -42,7 +41,7 @@ public class InsertControllerPopUp implements Initializable {
 
     public void istanziaPopUp(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/InsertPopUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/ForcedPopUp.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
            /* Stage stage = new Stage();
             stage.setTitle("Aule disponibili");
@@ -95,8 +94,7 @@ public class InsertControllerPopUp implements Initializable {
             public void handle(ActionEvent event) {
                 Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
                 bean.setAula(nomeAulaTF.getText());
-                new InsertControllerGUI().istanziaInsertGUI(event);
-                //TODO GUI
+                new ForcedControllerGUI().istanziaForcedGUI(event);
             }
         });
 
@@ -106,4 +104,3 @@ public class InsertControllerPopUp implements Initializable {
         });
     }
 }
-

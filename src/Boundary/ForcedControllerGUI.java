@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class InsertControllerGUI implements Initializable {
+public class ForcedControllerGUI implements Initializable {
     @FXML
     private TextField dataTF;
     @FXML
@@ -49,9 +49,9 @@ public class InsertControllerGUI implements Initializable {
 
     private String tipoP;
 
-    public void istanziaInsertGUI(Event e){
+    public void istanziaForcedGUI(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/InsertGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/ForcedGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
         }catch (Exception er){
             System.err.println(er.getMessage());
@@ -159,9 +159,9 @@ public class InsertControllerGUI implements Initializable {
                     //DONE
                     //si a premption allora DELETETHENINSERT
                     //si a non preemption allora abort
-                    /* new Controller().newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
+                     new Controller().newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
                     bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText());
-                    success();*/
+                    success();
                 }
             }
         });

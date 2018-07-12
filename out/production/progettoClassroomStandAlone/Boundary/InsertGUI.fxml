@@ -35,5 +35,7 @@
       <RadioButton fx:id="laureaRB" layoutX="522.0" layoutY="250.0" mnemonicParsing="false" text="Seduta di laurea" toggleGroup="$radioGroup" />
       <RadioButton fx:id="testRB" layoutX="322.0" layoutY="250.0" mnemonicParsing="false" text="Test d'ingresso" toggleGroup="$radioGroup" />
       <TextField fx:id="dataTF" editable="false" layoutX="71.0" layoutY="133.0" promptText="Data" />
+      <Button fx:id="preEmptionB" layoutX="161.0" layoutY="310.0" mnemonicParsing="false" text="Forza prenotazione" visible="false" />
+      <Button fx:id="annullaB" layoutX="192.0" layoutY="340.0" mnemonicParsing="false" text="Annulla" visible="false" />
    </children>
 </AnchorPane>

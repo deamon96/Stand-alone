@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundary.InsertControllerGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundary.ForcedControllerGUI">
    <children>
       <Button fx:id="indietroB" layoutX="365.0" layoutY="392.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Indietro" />
       <Label layoutX="236.0" layoutY="65.0" text="Università di Roma Tor Vergata">

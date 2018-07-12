@@ -145,7 +145,7 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         inserisciB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) { new InsertControllerPopUp().istanziaPopUp(event);}
+            public void handle(ActionEvent event) { new ForcedControllerPopUp().istanziaPopUp(event);}
         });
 
         mostraPrenotazioniB.setOnAction(new EventHandler<ActionEvent>() {
