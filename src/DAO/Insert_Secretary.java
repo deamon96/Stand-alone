@@ -52,7 +52,9 @@ public class Insert_Secretary {
                     info.add(2,rs.getString("Email"));
                 }
 
-            }else return false; //Il professore inserito non esiste
+            }else{
+                return false; //Il professore inserito non esiste
+            }
 
 
             if (controller.emptyControl(nameAula)) {
@@ -63,10 +65,11 @@ public class Insert_Secretary {
 
                 String del = String.format(Query.deleteEmpty, nameAula);
                 stmt.executeUpdate(del);
+            }
 
-                String insertSecretary = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, from,sessione);
+            String insertSecretary = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, from,sessione);
 
-                stmt.executeUpdate(insertSecretary);
+            stmt.executeUpdate(insertSecretary);
                 String PrenotationInfo = "Signor " + info.get(0) + " " + info.get(1) +" la richiesta di prenotazione per l'"
                         + nameAula + " nel giorno " + dataPrenota +
                         " dalle ore " + timeInizioPrenota + " alle ore " + timeFinePrenota + " è stata " +
@@ -75,14 +78,12 @@ public class Insert_Secretary {
                 //-------------Recupero dati dell'utente per cui è stata inserita la prenotazione----------------//
 
 
-                controller.sendEmail(info.get(2), "Prenotazione effettuata", PrenotationInfo);
+                //controller.sendEmail(info.get(2), "Prenotazione effettuata", PrenotationInfo);
                 stmt.close();
                 return true;
-            }
         }catch (Exception e){
             e.printStackTrace();
             return false;
         }
-        return true;
     }
 }

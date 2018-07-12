@@ -97,6 +97,7 @@ public class SecretaryPageControllerGUI implements Initializable{
                         if (s.getDataInizio() == null){
                             alert.setText("La data inserita è fuori da ogni sessione");
                             alert.setVisible(true);
+                            return;
                         }
 
                         SessionBean sessionBean = new SessionBean();
@@ -107,6 +108,10 @@ public class SecretaryPageControllerGUI implements Initializable{
                         String sessione = sessionBean.getDataInizio()+"/"+sessionBean.getDataFine();
 
                         controller.createPrenotationBean(inizio, fine, data, sessione);
+                        Prenotation_Bean bean = new Prenotation_Bean(inizio, fine, data, "Sessione "+
+                                sessionBean.getTipo()+" Inizio: "+ sessionBean.getDataInizio()+", Fine: "+
+                                sessionBean.getDataFine());
+                        new PrenotationBeanSingleton().setPrenotation_bean(bean);
 
                         PrenotationControllerPopUp controllerPopUp = new PrenotationControllerPopUp();
 
@@ -115,10 +120,6 @@ public class SecretaryPageControllerGUI implements Initializable{
                         controllerPopUp.istanziaPopUp(event);
                         //--//
 
-                        Prenotation_Bean bean = new Prenotation_Bean(inizio, fine, data, "Sessione "+
-                                sessionBean.getTipo()+" Inizio: "+ sessionBean.getDataInizio()+", Fine: "+
-                                sessionBean.getDataFine());
-                        new PrenotationBeanSingleton().setPrenotation_bean(bean);
 
                         for(int i = 0; i < r.getNome().size(); i++){
                             System.out.println(r.getNome().get(i));

@@ -52,13 +52,17 @@ public class Secr_PrenotationControllerGUI implements Initializable {
         }
     }
 
-    private boolean controllaDelegante() {
-        if ((esameRB.isSelected() || conferenzaRB.isSelected()) && (usernameProfTF.getText().equals(""))) {
+    private boolean controllaDelegante(){
+        if ((esameRB.isSelected() || conferenzaRB.isSelected())){
+            if(usernameProfTF.getText().equals("")){
                 alert.setText("Inserire nome del professore delegante!");
                 alert.setVisible(true);
                 return false;
+            }
+            return true;
+        }else {
+            return false;
         }
-        return true;
     }
 
     private void success(){
@@ -69,7 +73,7 @@ public class Secr_PrenotationControllerGUI implements Initializable {
 
     public void initialize(URL location, ResourceBundle resource){
 
-        laureaRB.setSelected(true);
+        esameRB.setSelected(true);
         Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
         dataTF.setText(bean.getDate()); startTF.setText(bean.getInizio().toString());
         endTF.setText(bean.getFine().toString()); sessioneL.setText(bean.getSessione());
@@ -129,14 +133,19 @@ public class Secr_PrenotationControllerGUI implements Initializable {
                         success();
                     }
                 }else if (testRB.isSelected()){
-                    new Controller().newPrenotationSecretary(bean.getAula(), "test", bean.getDate(),
+                    if(new Controller().newPrenotationSecretary(bean.getAula(), "test", bean.getDate(),
                             bean.getInizio(), bean.getFine(), bean.getSessione(),
-                            UserSingleton.getInstance().getUser().getUsername());
-                    success();
+                            UserSingleton.getInstance().getUser().getUsername())){
+                        success();
+                    }else {
+                        alert.setText("Errore");
+                        alert.setVisible(true);
+                    }
                 }else if (laureaRB.isSelected()){
                     new Controller().newPrenotationSecretary(bean.getAula(), "laurea", bean.getDate(),
                             bean.getInizio(), bean.getFine(), bean.getSessione(),
                             UserSingleton.getInstance().getUser().getUsername());
+                    success();
                 }
             }
         });

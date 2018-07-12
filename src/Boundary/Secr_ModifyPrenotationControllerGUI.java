@@ -72,12 +72,12 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
     private Room room = null;
 
     private void turn_off_all(boolean _01){
-        dataDP.setDisable(_01);            esameRB.setDisable(_01);
-        startTF.setDisable(_01);           conferenzaRB.setDisable(_01);
-        endTF.setDisable(_01);             testRB.setDisable(_01);
-        prenotationTV.setDisable(_01);     laureaRB.setDisable(_01);
+        dataDP.setDisable(_01);             esameRB.setDisable(_01);
+        startTF.setDisable(_01);            conferenzaRB.setDisable(_01);
+        endTF.setDisable(_01);              testRB.setDisable(_01);
+        prenotationTV.setDisable(_01);      laureaRB.setDisable(_01);
         modificaB.setDisable(_01);          indietroB.setDisable(_01);
-        preEmptionB.setVisible(_01);       annullaB.setVisible(_01);
+        preEmptionB.setVisible(_01);        annullaB.setVisible(_01);
         idTF.setDisable(_01);
     }
 
@@ -135,6 +135,7 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
 
         assert prenotationTV != null;
         prenotationTV.addEventHandler(MouseEvent.MOUSE_CLICKED, (event -> {
+            alert.setVisible(false);
             try{
                 setRoom(prenotationTV.getSelectionModel().getSelectedItem());
             }catch (Exception e){
@@ -168,11 +169,16 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
                 }else {
                     alert.setVisible(false);
                     SessionBean s = controller.trovaSessione(data);
-                    if (s.getDataInizio().equals("")){
+                    if (s.getDataInizio() == null){
                         alert.setText("La data inserita è fuori da ogni sessione");
+                        alert.setVisible(true);
                     }else{
                         try{
-                            if (controller.modify(ID, LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo)){
+                            if (room == null){
+                                alert.setText("Selezionare aula");
+                                alert.setVisible(true);
+                            }
+                            if (controller.modify(String.valueOf(room.getID()), LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo)){
                                 //ok
                                 alert.setText("Prenotazione modificata con successo");
                                 alert.setVisible(true);
@@ -194,7 +200,7 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
         preEmptionB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                controller.deleteThenUpdate(ID, LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo);
+                controller.deleteThenUpdate(String.valueOf(room.getID()), LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo);
                 alert.setText("Prenotazione modificata con successo");
                 alert.setVisible(true);
                 turn_off_all(false);

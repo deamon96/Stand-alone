@@ -13,3 +13,4 @@ public class Main {
 //1.70 fisso
 //1.71 portatile
 //1.72 portatile
+//1.75 fisso (ancora problemi con la GUI della pre-emption)
