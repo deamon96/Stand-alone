@@ -1,11 +1,10 @@
 package Boundary;
 
 import Bean.Prenotation_Bean;
+import Bean.RoomBean;
 import Control.Controller;
 import Entity.Room;
 import Utils.PrenotationBeanSingleton;
-import Utils.PrenotationSingleton;
-import Utils.UserSingleton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,21 +15,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class PrenotationControllerPopUp implements Initializable {
+public class ForcedPrenotationControllerPopUp implements Initializable {
     @FXML
     private TableView<Room> auleTV = new TableView<>();
     @FXML
@@ -44,7 +41,7 @@ public class PrenotationControllerPopUp implements Initializable {
 
     public void istanziaPopUp(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/PrenotationPopUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/ForcedPrenotationPopUp.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
         }catch (IOException er){
             System.out.println("-----IO Exception-----");
@@ -54,14 +51,17 @@ public class PrenotationControllerPopUp implements Initializable {
 
     public void initialize(URL location, ResourceBundle resource){
 
-        ArrayList<String> auleDisponibili = PrenotationSingleton.getInstance().getListaAule();
+        Prenotation_Bean prenotation_bean = new Prenotation_Bean(null, null, null, null);
+        PrenotationBeanSingleton.getInstance().setPrenotation_bean(prenotation_bean);
+        Controller controller = new Controller();
+        ArrayList<RoomBean> aule = controller.allRooms();
         ObservableList<Room> listaAule = FXCollections.observableArrayList();
         prenotaB.setDisable(true);
 
         try{
-            for (int i = 0;  i < auleDisponibili.size(); i++){
+            for (int i = 0; i < aule.size(); i++){
                 Room room = new Room();
-                room.setNome(auleDisponibili.get(i));
+                room.setNome(aule.get(i).getNome());
                 listaAule.add(room);
             }
             if (auleTV != null){
@@ -75,7 +75,7 @@ public class PrenotationControllerPopUp implements Initializable {
         }
 
         assert auleTV != null;
-        auleTV.addEventHandler(MouseEvent.MOUSE_CLICKED,(event -> {
+        auleTV.addEventHandler(MouseEvent.MOUSE_CLICKED, (event -> {
             try{
                 String nome = auleTV.getSelectionModel().getSelectedItem().getNome();
                 nomeAulaTF.setText(nome);
@@ -90,26 +90,13 @@ public class PrenotationControllerPopUp implements Initializable {
             public void handle(ActionEvent event) {
                 Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
                 bean.setAula(nomeAulaTF.getText());
-                if (UserSingleton.getInstance().getUser().getType().equals("1")){
-                    Secr_PrenotationControllerGUI sPage = new Secr_PrenotationControllerGUI();
-                    sPage.istanziaSPageGUI(event);
-                }else if (UserSingleton.getInstance().getUser().getType().equals("0")){
-                    Prof_PrenotationControllerGUI pPage = new Prof_PrenotationControllerGUI();
-                    pPage.istanziaPPageGUI(event);
-                }
+                new ForcedPrenotationControllerGUI().istanziaForcedPControllerGUI(event);
             }
         });
 
         indietroB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                //((Node) (event.getSource())).getScene().getWindow().hide();
-                if (UserSingleton.getInstance().getUser().getType().equals("1")){
-                    new SecretaryPageControllerGUI().istanziaSPageGUI(event);
-                }else if (UserSingleton.getInstance().getUser().getType().equals("0")){
-                    new ProfPageControllerGUI().istanziaPPageGUI(event);
-                }
-            }
+            public void handle(ActionEvent event) {new SecretaryPageControllerGUI().istanziaSPageGUI(event);}
         });
     }
 }

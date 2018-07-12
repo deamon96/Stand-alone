@@ -7,7 +7,6 @@ import Control.Controller;
 import Utils.PrenotationBeanSingleton;
 import Utils.PrenotationSingleton;
 import Utils.UserSingleton;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -16,19 +15,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 public class SecretaryPageControllerGUI implements Initializable{
 
@@ -145,26 +138,22 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         inserisciB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) { new ForcedControllerPopUp().istanziaPopUp(event);}
+            public void handle(ActionEvent event) {new ForcedPrenotationControllerPopUp().istanziaPopUp(event);}
         });
 
         mostraPrenotazioniB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new Secr_AllPrenotationsControllerPopUp().istanziaPopUp(event);}
         });
 
         miePrenotazioniB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) { new Secr_SelfPControllerPopUp().istanziaPopUp(event);}
+            public void handle(ActionEvent event) {new Secr_SelfPControllerPopUp().istanziaPopUp(event);}
         });
 
         modificaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new Secr_ModifyPrenotationControllerGUI().istanziaPopUp(event);}
         });
 
         eliminaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {

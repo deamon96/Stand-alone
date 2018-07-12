@@ -12,7 +12,7 @@ public class Query {
             "((inizio<='%s' AND fine>='%s') OR (inizio<='%s' AND fine>='%s') OR (inizio>='%s' AND fine <='%s')))";*/
 
     public static String delete_deleteThenUpdate = "UPDATE dbEsame.Aule SET tipopr=NULL, datapr=NULL, inizio=NULL, " +
-            "fine=NULL, fromp=NULL, sessione=NULL  WHERE ((datapr='%s' AND ID!='%s') AND ((inizio<='%s' AND fine>='%s') " +
+            "fine=NULL, fromp=NULL, sessione=NULL, ID='%s' WHERE (datapr='%s' AND ((inizio<='%s' AND fine>='%s') " +
             "OR (inizio<='%s' AND fine>='%s') OR (inizio>='%s' AND fine <='%s')))";
 
     /*public static String deleteSecretary = "DELETE FROM dbEsame.Aule WHERE ((datapr='%s' AND nome='%s') AND " +

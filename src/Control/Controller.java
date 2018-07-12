@@ -47,14 +47,14 @@ public class Controller {
     public ArrayList<Room> showComplete_DB(){
         return ShowCompleteDB.show_completeDB();
     }
-/*
+
     //-------------MOSTRA TUTTE LE PRENOTAZIONI (SEGRETARIA)-----------//
 
     public ArrayList<Room> allPrenotation(){
         ArrayList<Room> rooms = All_Prenotation.showAll();
         return rooms;
     }
-*/
+
     //-----------------TUTTE LE AULE-----------------------------------//
 
     public ArrayList<RoomBean> allRooms(){
@@ -88,7 +88,7 @@ public class Controller {
         deleteThenInsert.deleteThenInsert(nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, sessione, from);
         return true;
     }
-/*
+
     //-----------------------MODIFICA PRENOTAZIONE------------------//
 
     public boolean modify(String ID, LocalTime start, LocalTime end, String date, String type){
@@ -106,7 +106,7 @@ public class Controller {
         return deleteThenUpdate.deletethenUpdate(id, start, end, date, type);
 
     }
-
+/*
     //--------------CANCELLAZIONE PRENOTAZIONE----------//
 
     public boolean delete(String ID){
