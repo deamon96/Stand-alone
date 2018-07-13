@@ -29,7 +29,7 @@ public class DeleteThenUpdate {
                     " OR(inizio>='" + start + "' AND fine<='" + end + "'AND ID !='" +id +"')"
                     + " OR(inizio<='" + start + "'AND fine>='" + end + "'AND ID !='" +id +"'))";*/
 
-            String deleteQuery = String.format(Query.delete_deleteThenUpdate, id, date, start, start,
+            String deleteQuery = String.format(Query.delete_deleteThenUpdate, date, start, start,
                     end, end, start, end);
 
             /*String modify = "UPDATE Aule SET inizio='" + start + "', fine='" + end + "', datapr='" + date + "', tipopr='"
@@ -46,6 +46,7 @@ public class DeleteThenUpdate {
 
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
 
         return true;

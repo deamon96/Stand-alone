@@ -1,8 +1,8 @@
 package Boundary;
 
 import Bean.SessionBean;
-import Control.Controller;
 import Entity.Room;
+import Control.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,7 +23,7 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class Secr_ModifyPrenotationControllerGUI implements Initializable {
+public class Prof_ModifyPrenotationControllerGUI implements Initializable {
     @FXML
     private TableView<Room> prenotationTV;
     @FXML
@@ -49,17 +49,9 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
     @FXML
     private RadioButton conferenzaRB;
     @FXML
-    private RadioButton testRB;
-    @FXML
-    private RadioButton laureaRB;
-    @FXML
     private Button modificaB;
     @FXML
     private Button indietroB;
-    @FXML
-    private Button preEmptionB;
-    @FXML
-    private Button annullaB;
     @FXML
     private Label alert;
     private String inizio;
@@ -68,18 +60,9 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
     private String tipo;
     private Room room = null;
 
-    private void turn_off_all(boolean _01){
-        dataDP.setDisable(_01);             esameRB.setDisable(_01);
-        startTF.setDisable(_01);            conferenzaRB.setDisable(_01);
-        endTF.setDisable(_01);              testRB.setDisable(_01);
-        prenotationTV.setDisable(_01);      laureaRB.setDisable(_01);
-        modificaB.setDisable(_01);          indietroB.setDisable(_01);
-        preEmptionB.setVisible(_01);        annullaB.setVisible(_01);
-    }
-
     public void istanziaPopUp(Event e ){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/Secr_ModifyPrenotationGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Boundary/Prof_ModifyPrenotationGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
         } catch (Exception er){
             er.printStackTrace();
@@ -88,7 +71,7 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
 
     private void aggiornaTabella(){
 
-        ArrayList<Room> r = new Controller().allPrenotation();
+        ArrayList<Room> r = new Controller().showComplete_DB();
         ObservableList listaPrenotazioni = FXCollections.observableArrayList();
 
         try {
@@ -123,8 +106,6 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
     public void initialize(URL location, ResourceBundle resource){
 
         alert.setVisible(false);
-        preEmptionB.setVisible(false);
-        annullaB.setVisible(false);
 
         Controller controller = new Controller();
         aggiornaTabella();
@@ -150,12 +131,8 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
 
                 if (esameRB.isSelected()){
                     setTipo("esame");
-                }else if (conferenzaRB.isSelected()){
-                    setTipo("conferenza");
-                }else if (testRB.isSelected()){
-                    setTipo("test d'ingresso");
                 }else{
-                    setTipo("seduta di laurea");
+                    setTipo("conferenza");
                 }
 
                 if (inizio.equals("") || fine.equals("") || data.equals("")){
@@ -173,13 +150,14 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
                                 alert.setText("Selezionare aula");
                                 alert.setVisible(true);
                             }
-                            if (controller.modify(room.getNome(), String.valueOf(room.getID()), LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo)){
+                            if (controller.modify(room.getNome(), String.valueOf(room.getID()), LocalTime.parse(inizio),
+                                    LocalTime.parse(fine), data, tipo)){
                                 //ok
                                 alert.setText("Prenotazione modificata con successo");
                                 alert.setVisible(true);
                             }else {
-                                turn_off_all(true);
-                                alert.setText("La modifica sovrascriverà un'altra prenotazione. Procedere?");
+                                alert.setText("Impossibile prenotare, esiste già un'altra prenotazione per quella " +
+                                        "fascia oraria.");
                                 alert.setVisible(true);
                             }
                         }catch (DateTimeParseException e){
@@ -192,30 +170,10 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
             }
         });
 
-        preEmptionB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                controller.deleteThenUpdate(String.valueOf(room.getID()), LocalTime.parse(inizio), LocalTime.parse(fine), data, tipo);
-                alert.setText("Prenotazione modificata con successo");
-                alert.setVisible(true);
-                turn_off_all(false);
-                aggiornaTabella();
-            }
-        });
-
-        annullaB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                turn_off_all(false);
-                alert.setText("Operazione annullata");
-                alert.setVisible(true);
-            }
-        });
-
         indietroB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                new SecretaryPageControllerGUI().istanziaSPageGUI(event);
+                new ProfPageControllerGUI().istanziaPPageGUI(event);
             }
         });
     }
@@ -244,4 +202,3 @@ public class Secr_ModifyPrenotationControllerGUI implements Initializable {
         this.room = room;
     }
 }
-

@@ -91,10 +91,10 @@ public class Controller {
 
     //-----------------------MODIFICA PRENOTAZIONE------------------//
 
-    public boolean modify(String ID, LocalTime start, LocalTime end, String date, String type){
+    public boolean modify(String nome, String ID, LocalTime start, LocalTime end, String date, String type){
 
         Modify modify = new Modify();
-        return modify.modify(ID, start, end, date, type);
+        return modify.modify(nome, ID, start, end, date, type);
 
     }
 
@@ -106,7 +106,7 @@ public class Controller {
         return deleteThenUpdate.deletethenUpdate(id, start, end, date, type);
 
     }
-/*
+
     //--------------CANCELLAZIONE PRENOTAZIONE----------//
 
     public boolean delete(String ID){
@@ -115,7 +115,7 @@ public class Controller {
         return delete.delete(ID);
 
     }
-*/
+
     //-----------CONTROLLO ENTRY DUPLICATE---------//
 
     public boolean duplicateControl(String name, String dataPrenota, LocalTime timeInizioPrenota, LocalTime timeFinePrenota){

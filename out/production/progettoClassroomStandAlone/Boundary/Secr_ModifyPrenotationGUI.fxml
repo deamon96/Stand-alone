@@ -31,13 +31,12 @@
             <ToggleGroup fx:id="radioGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="testRB" layoutX="375.0" layoutY="235.0" mnemonicParsing="false" text="Test d'ingresso" toggleGroup="$radioGroup" />
       <RadioButton fx:id="conferenzaRB" layoutX="560.0" layoutY="197.0" mnemonicParsing="false" text="Conferenza" toggleGroup="$radioGroup" />
-      <RadioButton fx:id="laureaRB" layoutX="560.0" layoutY="235.0" mnemonicParsing="false" text="Seduta di laurea" toggleGroup="$radioGroup" />
       <Button fx:id="modificaB" defaultButton="true" layoutX="336.0" layoutY="356.0" mnemonicParsing="false" text="Modifica prenotazione" />
       <Label fx:id="alert" layoutX="102.0" layoutY="324.0" text="Label" />
-      <TextField fx:id="idTF" layoutX="277.0" layoutY="275.0" prefHeight="25.0" prefWidth="49.0" promptText="ID" />
-      <Button fx:id="annullaB" layoutX="607.0" layoutY="388.0" mnemonicParsing="false" text="Annulla" />
-      <Button fx:id="preEmptionB" layoutX="588.0" layoutY="356.0" mnemonicParsing="false" text="Forza modifica" />
+      <RadioButton fx:id="testRB" layoutX="375.0" layoutY="248.0" mnemonicParsing="false" text="Test d'ingresso" toggleGroup="$radioGroup" />
+      <RadioButton fx:id="laureaRB" layoutX="560.0" layoutY="248.0" mnemonicParsing="false" text="Seduta di laurea" toggleGroup="$radioGroup" />
+      <Button fx:id="preEmptionB" layoutX="92.0" layoutY="356.0" mnemonicParsing="false" text="Forza Modifica" />
+      <Button fx:id="annullaB" layoutX="110.0" layoutY="388.0" mnemonicParsing="false" text="Annulla" />
    </children>
 </AnchorPane>

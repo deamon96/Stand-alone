@@ -177,16 +177,12 @@ public class ProfPageControllerGUI implements Initializable {
 
         modificaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new Prof_ModifyPrenotationControllerGUI().istanziaPopUp(event);}
         });
 
         eliminaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new DeletePrenotationControllerGUI().istanziaDeletePrenotationGUI(event);}
         });
 
         visualizzaSessioniB.setOnAction(new EventHandler<ActionEvent>() {

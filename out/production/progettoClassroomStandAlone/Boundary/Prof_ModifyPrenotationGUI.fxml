@@ -10,7 +10,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundary.Secr_ModifyPrenotationControllerGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundary.Prof_ModifyPrenotationControllerGUI">
    <children>
       <TableView fx:id="prenotationTV" layoutX="121.0" layoutY="14.0" prefHeight="152.0" prefWidth="566.0">
         <columns>
@@ -34,9 +34,5 @@
       <RadioButton fx:id="conferenzaRB" layoutX="560.0" layoutY="197.0" mnemonicParsing="false" text="Conferenza" toggleGroup="$radioGroup" />
       <Button fx:id="modificaB" defaultButton="true" layoutX="336.0" layoutY="356.0" mnemonicParsing="false" text="Modifica prenotazione" />
       <Label fx:id="alert" layoutX="102.0" layoutY="324.0" text="Label" />
-      <RadioButton fx:id="testRB" layoutX="375.0" layoutY="248.0" mnemonicParsing="false" text="Test d'ingresso" toggleGroup="$radioGroup" />
-      <RadioButton fx:id="laureaRB" layoutX="560.0" layoutY="248.0" mnemonicParsing="false" text="Seduta di laurea" toggleGroup="$radioGroup" />
-      <Button fx:id="preEmptionB" layoutX="92.0" layoutY="356.0" mnemonicParsing="false" text="Forza Modifica" />
-      <Button fx:id="annullaB" layoutX="110.0" layoutY="388.0" mnemonicParsing="false" text="Annulla" />
    </children>
 </AnchorPane>

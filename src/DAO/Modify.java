@@ -10,7 +10,7 @@ import java.time.LocalTime;
 
 public class Modify {
 
-    public boolean modify(String idVecchio, LocalTime start, LocalTime end, String date, String type) {
+    public boolean modify(String nome, String idVecchio, LocalTime start, LocalTime end, String date, String type) {
 
         /*String modify = "UPDATE Aule SET inizio='" + start + "', fine='" + end + "', datapr='" + date + "', tipopr='"
                 + type + "' WHERE ID='" + id + "'";*/
@@ -27,7 +27,7 @@ public class Modify {
 
                 stmt = conn.createStatement();
 
-                String controlQuery = String.format(Query.duplicateControl_Modify, date, idVecchio, start, start,
+                String controlQuery = String.format(Query.duplicateControl_Modify, nome, date, idVecchio, start, start,
                         end, end, start, end);
 
                 System.out.println(controlQuery);

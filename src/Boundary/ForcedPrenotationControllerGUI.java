@@ -3,6 +3,7 @@ package Boundary;
 import Bean.Prenotation_Bean;
 import Control.Controller;
 import Utils.PrenotationBeanSingleton;
+import Utils.UserSingleton;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -14,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class ForcedPrenotationControllerGUI implements Initializable {
@@ -44,8 +46,6 @@ public class ForcedPrenotationControllerGUI implements Initializable {
     @FXML
     private Label alert;
 
-    private String tipoP;
-
     /*public void istanziaGUI(Event e){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/Boundary/ForcedPrenotationGUI.fxml"));
@@ -57,26 +57,59 @@ public class ForcedPrenotationControllerGUI implements Initializable {
 
     void istanziaForcedPControllerGUI(Event e){
         try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ForcedPrenotationControllerGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("ForcedGUI.fxml"));
             ((Node) (e.getSource())).getScene().setRoot(root);
         }catch (Exception er){
             er.printStackTrace();
         }
     }
 
-    private boolean controllaDelegante() {
-        if ((esameRB.isSelected() || conferenzaRB.isSelected()) && (usernameProfTF.getText().equals(""))) {
-            alert.setText("Inserire nome del professore delegante!");
-            alert.setVisible(true);
-            return false;
+    private int controllaDelegante() {
+        if ((esameRB.isSelected() || conferenzaRB.isSelected())) {
+            if (usernameProfTF.getText().equals("")){
+                alert.setText("Inserire nome del professore delegante!");
+                alert.setVisible(true);
+                return 0;
+            }else {
+                return 1;
+            }
         }
-        return true;
+        return 2;
     }
 
     private void success(){
         alert.setText("Prenotazione avvenuta con successo");
         alert.setVisible(true);
         prenotaB.setDisable(true);
+    }
+
+    private String definisci_tipo_prenotazione() {
+        String tipo = "non definito";
+        if (controllaDelegante() == 1) {
+            if (esameRB.isSelected()) {
+                tipo = "esame";
+            } else if (conferenzaRB.isSelected()) {
+                tipo = "conferenza";
+            }
+        } else if (controllaDelegante() == 2) {
+            if (testRB.isSelected()) {
+                tipo = "test";
+            } else if (laureaRB.isSelected()) {
+                tipo = "seduta";
+            }
+        }
+        return tipo;
+    }
+
+
+    private String definisci_prenotante(String tipoP){
+        String fromp;
+        if (tipoP.equals("conferenza")||tipoP.equals("esame")){
+            fromp = usernameProfTF.getText();
+        }else {
+            fromp = UserSingleton.getInstance().getUser().getUsername();
+        }
+        return fromp;
     }
 
     private void turn_off_all(boolean _01){
@@ -92,7 +125,10 @@ public class ForcedPrenotationControllerGUI implements Initializable {
 
         Controller controller = new Controller();
 
-        laureaRB.setSelected(true);
+        esameRB.setSelected(true);
+        preEmptionB.setVisible(false);
+        annullaB.setVisible(false);
+        alert.setVisible(false);
         Prenotation_Bean bean = PrenotationBeanSingleton.getInstance().getPrenotation_bean();
 
         esameRB.setOnAction(new EventHandler<ActionEvent>() {
@@ -139,7 +175,9 @@ public class ForcedPrenotationControllerGUI implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 alert.setVisible(false);
-                if (controllaDelegante()) {
+                String tipoP = "non definito";
+
+                /*if (controllaDelegante()) {
                     if (esameRB.isSelected()) {
                         tipoP = "esame";
                     } else if (conferenzaRB.isSelected()) {
@@ -149,11 +187,23 @@ public class ForcedPrenotationControllerGUI implements Initializable {
                     tipoP = "test d'ingresso";
                 } else if (laureaRB.isSelected()){
                     tipoP = "seduta di laurea";
+                }*/
+                tipoP = definisci_tipo_prenotazione();
+
+                String nomeSessione = controller.trovaSessione(dataDP.getValue().toString()).getDataInizio() +
+                        "/" + controller.trovaSessione(dataDP.getValue().toString()).getDataFine();
+                if (nomeSessione.equals("null/null")){
+                    alert.setText("La data inserita è fuori da ogni sessione");
+                    alert.setVisible(true);
+                    return;
                 }
-
-                if (controller.newPrenotationSecretary(bean.getAula(), tipoP, bean.getDate(),
-                        bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText())) {
-
+                bean.setSessione(nomeSessione);
+                String data = dataDP.getValue().toString();
+                LocalTime inizio = LocalTime.parse(startTF.getText());
+                LocalTime fine = LocalTime.parse(endTF.getText());
+                String fromp = definisci_prenotante(tipoP);
+                if (controller.newPrenotationSecretary(bean.getAula(), tipoP, data, inizio, fine, bean.getSessione(),
+                        fromp)) {
                     success(); //ok
                 } else {
                     turn_off_all(true);
@@ -173,8 +223,23 @@ public class ForcedPrenotationControllerGUI implements Initializable {
         preEmptionB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                controller.deleteThenInsert(bean.getAula(), tipoP, bean.getDate(), bean.getInizio(), bean.getFine(),
-                        bean.getSessione(), usernameProfTF.getText());
+                String tipoP = "non definito";
+                tipoP = definisci_tipo_prenotazione();
+                String nomeSessione = controller.trovaSessione(dataDP.getValue().toString()).getDataInizio() +
+                        "/" + controller.trovaSessione(dataDP.getValue().toString()).getDataFine();
+                if (nomeSessione.equals("null/null")){
+                    alert.setText("La data inserita è fuori da ogni sessione");
+                    alert.setVisible(true);
+                    return;
+                }
+                bean.setSessione(nomeSessione);
+                String data = dataDP.getValue().toString();
+                LocalTime inizio = LocalTime.parse(startTF.getText());
+                LocalTime fine = LocalTime.parse(endTF.getText());
+
+                String fromp = definisci_prenotante(tipoP);
+                controller.deleteThenInsert(bean.getAula(), tipoP, data, inizio, fine,
+                        bean.getSessione(), fromp);success();
                 turn_off_all(false);
                 alert.setVisible(false);
             }

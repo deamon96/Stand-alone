@@ -72,7 +72,7 @@ public class DeleteThenInsert {
                         " eliminata. Rivolgersi alla segreteria per maggiori informazioni";
 
 
-                controller.sendEmail(email,"Prenotazione Eliminata", testo);
+//                controller.sendEmail(email,"Prenotazione Eliminata", testo);
             }
 
 
@@ -97,7 +97,7 @@ public class DeleteThenInsert {
 
             //----------------INSERIMENTO PRENOTAZIONE SEGRETARIA-----------------------//
 
-            String insertSecretary = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, user.getUsername(),from, sessione);
+            String insertSecretary = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, from, sessione);
             stmt.executeUpdate(insertSecretary);
 
             stmt.close();

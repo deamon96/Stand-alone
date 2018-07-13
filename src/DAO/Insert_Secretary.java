@@ -70,7 +70,7 @@ public class Insert_Secretary {
             String insertSecretary = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, from,sessione);
 
             stmt.executeUpdate(insertSecretary);
-                String PrenotationInfo = "Signor " + info.get(0) + " " + info.get(1) +" la richiesta di prenotazione per l'"
+         /*       String PrenotationInfo = "Signor " + info.get(0) + " " + info.get(1) +" la richiesta di prenotazione per l'"
                         + nameAula + " nel giorno " + dataPrenota +
                         " dalle ore " + timeInizioPrenota + " alle ore " + timeFinePrenota + " è stata " +
                         " inserita con successo dalla segreteria! ";
@@ -78,7 +78,7 @@ public class Insert_Secretary {
                 //-------------Recupero dati dell'utente per cui è stata inserita la prenotazione----------------//
 
 
-                //controller.sendEmail(info.get(2), "Prenotazione effettuata", PrenotationInfo);
+                //controller.sendEmail(info.get(2), "Prenotazione effettuata", PrenotationInfo);*/
                 stmt.close();
                 return true;
         }catch (Exception e){

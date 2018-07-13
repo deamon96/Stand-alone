@@ -159,15 +159,12 @@ public class SecretaryPageControllerGUI implements Initializable{
 
         eliminaPrenotazioneB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-
-            }
+            public void handle(ActionEvent event) {new DeletePrenotationControllerGUI().istanziaDeletePrenotationGUI(event);}
         });
 
         nuovoAnnoB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                new NewYearControllerGUI().istanziaNewYearGUI(event);
+            public void handle(ActionEvent event) {new NewYearControllerGUI().istanziaNewYearGUI(event);
             }
         });
 
