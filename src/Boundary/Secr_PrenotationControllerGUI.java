@@ -147,6 +147,7 @@ public class Secr_PrenotationControllerGUI implements Initializable {
                             UserSingleton.getInstance().getUser().getUsername());
                     success();
                 }*/
+                int i = 0;
                 String tipo = new String();
                 if (controllaDelegante()){
                     if (esameRB.isSelected()){
@@ -154,13 +155,20 @@ public class Secr_PrenotationControllerGUI implements Initializable {
                     }else if (conferenzaRB.isSelected()) {
                         tipo = "conferenza";
                     }
+                    i = 1;
                 }else if (testRB.isSelected()) {
                     tipo = "test";
                 }else {
                     tipo = "laurea";
                 }
+                String from = new String();
+                if (i==1){
+                    from = usernameProfTF.getText();
+                }else {
+                    from = UserSingleton.getInstance().getUser().getUsername();
+                }
                 if (new Controller().newPrenotationSecretary(bean.getAula(), tipo, bean.getDate(), bean.getInizio(),
-                        bean.getFine(), bean.getSessione(), UserSingleton.getInstance().getUser().getUsername())){
+                        bean.getFine(), bean.getSessione(), from)){
                     success();
                 }else {
                     alert.setText("Errore");

@@ -58,7 +58,7 @@ public class LoginControllerGUI extends Application implements Initializable{
         //Lancia l'interfaccia grafica LoginGUI.fxml.
 
         Parent root = FXMLLoader.load(getClass().getResource("/boundary/LoginGUI.fxml"));
-        Stage.setTitle("AppStar");
+        Stage.setTitle("Classrooms' Handler 2.0");
         Stage.setScene(new Scene(root, 800, 450));
         //Imposta il root relativo alla schermata di Login.
         Stage.show();

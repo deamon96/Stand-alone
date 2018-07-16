@@ -190,13 +190,6 @@ public class ProfPageControllerGUI implements Initializable {
             public void handle(ActionEvent event) {new ViewSessionControllerPopUp().istanziaPopUp(event);}
         });
 
-        storicoB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-            }
-        });
-
         logoutB.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
