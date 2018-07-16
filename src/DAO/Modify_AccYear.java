@@ -21,7 +21,7 @@ public class Modify_AccYear {
 
             //----------------Controllo che non ci siano sessioni che rimangano fuori dall'anno accademico con le nuove date-------//
 
-            String control = String.format(Query.modifyAccYear_control, oldInizio, oldFine, oldInizio, oldFine);
+            String control = String.format(Query.modifyAccYear_control, oldInizio, newInizio, oldFine, newFine);
 
             ResultSet rs = stmt.executeQuery(control);
 

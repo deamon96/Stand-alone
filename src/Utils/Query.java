@@ -87,11 +87,11 @@ public class Query {
 
     public static String prenotationInAccYear = "SELECT * FROM Aule WHERE (fromp='%s' AND (datapr > '%s' AND datapr < '%s'))";
 
-    //public static String modifyAccYear_control = "SELECT nome FROM sessioni WHERE (DataInizio < '%s' OR DataFine > '%s')";
+    //public static String modifyAccYear_control = "SELECT nome FROM sessioni WHERE ((DataInizio < '%s' OR DataFine > '%s'))";
 
-    public static String modifyAccYear_control = "SELECT nome FROM sessioni WHERE (DataInizio > '%s' AND DataInizio < '%s'"+
-                                                                                "AND DataFine > '%s' AND DataFine < '%s')";
 
+    public static String modifyAccYear_control = "SELECT nome FROM sessioni WHERE ((DataInizio > '%s' AND DataInizio < '%s')"+
+            "AND (DataFine < '%s' AND DataFine > '%s'))";
     public static String modifyAccYear = "UPDATE anni_accademici SET DataInizio='%s', DataFine='%s', Nome='%s'"+
                                         "WHERE Nome='%s'";
 

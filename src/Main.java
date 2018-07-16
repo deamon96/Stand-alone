@@ -15,3 +15,4 @@ public class Main {
 //1.72 portatile
 //1.75 fisso (ancora problemi con la GUI della pre-emption)
 //1.8  fisso
+//2.0  fisso
