@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DisponibleRooms_Secr {
 
-    public static Disponible_RoomBean show_Secretary(LocalTime timeInizio, LocalTime timeFine, String dateSearch){
+    public Disponible_RoomBean show_Secretary(LocalTime timeInizio, LocalTime timeFine, String dateSearch){
 
         java.sql.Statement stmt = null;
         Connection conn = null;

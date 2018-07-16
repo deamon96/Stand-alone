@@ -31,7 +31,7 @@ public class Controller {
     //------AULE DIPONIBILI SEGRETARIA--------------//
 
     public Disponible_RoomBean show_Secretary(LocalTime timeInizio, LocalTime timeFine, String dateSearch) {
-        Disponible_RoomBean showDatabase = DisponibleRooms_Secr.show_Secretary(timeInizio, timeFine, dateSearch);
+        Disponible_RoomBean showDatabase = new DisponibleRooms_Secr().show_Secretary(timeInizio, timeFine, dateSearch);
         return showDatabase;
     }
 

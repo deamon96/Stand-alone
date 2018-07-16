@@ -122,7 +122,7 @@ public class Secr_PrenotationControllerGUI implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 alert.setVisible(false);
-                if (controllaDelegante()){
+                /*if (controllaDelegante()){
                     if (esameRB.isSelected()){
                         new Controller().newPrenotationSecretary(bean.getAula(), "esame", bean.getDate(),
                                 bean.getInizio(), bean.getFine(), bean.getSessione(), usernameProfTF.getText());
@@ -146,6 +146,25 @@ public class Secr_PrenotationControllerGUI implements Initializable {
                             bean.getInizio(), bean.getFine(), bean.getSessione(),
                             UserSingleton.getInstance().getUser().getUsername());
                     success();
+                }*/
+                String tipo = new String();
+                if (controllaDelegante()){
+                    if (esameRB.isSelected()){
+                        tipo = "esame";
+                    }else if (conferenzaRB.isSelected()) {
+                        tipo = "conferenza";
+                    }
+                }else if (testRB.isSelected()) {
+                    tipo = "test";
+                }else {
+                    tipo = "laurea";
+                }
+                if (new Controller().newPrenotationSecretary(bean.getAula(), tipo, bean.getDate(), bean.getInizio(),
+                        bean.getFine(), bean.getSessione(), UserSingleton.getInstance().getUser().getUsername())){
+                    success();
+                }else {
+                    alert.setText("Errore");
+                    alert.setVisible(true);
                 }
             }
         });
