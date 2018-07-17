@@ -37,8 +37,6 @@ public class ProfPageControllerGUI implements Initializable {
     @FXML
     private Button logoutB;
     @FXML
-    private Button prenotazioniAttiveB;
-    @FXML
     private Button miePrenotazioniB;
     @FXML
     private Button modificaPrenotazioneB;
@@ -46,8 +44,6 @@ public class ProfPageControllerGUI implements Initializable {
     private Button eliminaPrenotazioneB;
     @FXML
     private Button visualizzaSessioniB;
-    @FXML
-    private Button storicoB;
     @FXML
     private RadioButton proiettore;
     @FXML
@@ -159,13 +155,6 @@ public class ProfPageControllerGUI implements Initializable {
                         System.out.println(f.getMessage());
                     }
                 }
-
-            }
-        });
-
-        prenotazioniAttiveB.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
 
             }
         });

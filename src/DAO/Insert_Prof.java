@@ -36,12 +36,12 @@ public class Insert_Prof {
 
             String insertProf = String.format(Query.insert, nameAula, tipoPrenota, dataPrenota, timeInizioPrenota, timeFinePrenota, user.getUsername(), sessione);
 
-            String PrenotationInfo = "Signor " + user.getName() + " " + user.getSurname() + " la prenotazione da " +
+            /*String PrenotationInfo = "Signor " + user.getName() + " " + user.getSurname() + " la prenotazione da " +
                     "lei inserita per l'" + nameAula + " nel giorno " + dataPrenota +
                     " dalle ore " + timeInizioPrenota + " alle ore " + timeFinePrenota + " è stata " +
                     " inserita con successo! ";
 
-            controller.sendEmail(user.getMail(), "Prenotazione effettuata", PrenotationInfo);
+            controller.sendEmail(user.getMail(), "Prenotazione effettuata", PrenotationInfo);*/
             stmt.executeUpdate(insertProf);
             stmt.close();
 

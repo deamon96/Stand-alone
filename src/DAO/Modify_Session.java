@@ -72,10 +72,10 @@ public class Modify_Session {
                     cognome = resultSet1.getString("Surname");
                     email = resultSet1.getString("Email");
 
-                    String testo = "Signor "+nome+" "+cognome + " la prenotazione numero " + ID + " da lei inserita è stata eliminata" +
+                    /*String testo = "Signor "+nome+" "+cognome + " la prenotazione numero " + ID + " da lei inserita è stata eliminata" +
                             " per una modifica effettuata alla sessione a cui apparteneva";
 
-                    controller.sendEmail(email, "Prenotazione Eliminata", testo);
+                    controller.sendEmail(email, "Prenotazione Eliminata", testo);*/
                 }
 
             }

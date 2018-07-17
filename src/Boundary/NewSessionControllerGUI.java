@@ -81,6 +81,8 @@ public class NewSessionControllerGUI implements Initializable {
                     alert.setVisible(false);
                     AccademicYearBean bean = AccademicYearBeanSingleton.getInstance().getYearBean();
                     controller.newSess(inizio, fine, tipo, bean.getNome());
+                    alert.setText("Nuova sessione inserita con successo!");
+                    alert.setVisible(true);
                 }
             }
         });

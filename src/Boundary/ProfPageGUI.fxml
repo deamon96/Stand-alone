@@ -21,11 +21,10 @@
       <TextField fx:id="endTF" layoutX="437.0" layoutY="133.0" promptText="Ora fine" />
       <DatePicker fx:id="dataDP" layoutX="14.0" layoutY="133.0" promptText="yyyy-mm-gg" />
       <Button fx:id="cercaB" defaultButton="true" layoutX="364.0" layoutY="185.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Cerca" />
-      <Button fx:id="prenotazioniAttiveB" layoutX="71.0" layoutY="253.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Prenotazioni attive" wrapText="true" />
-      <Button fx:id="miePrenotazioniB" layoutX="71.0" layoutY="319.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Mie prenotazioni" wrapText="true" />
-      <Button fx:id="modificaPrenotazioneB" layoutX="186.0" layoutY="253.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Modifica prenotazione" wrapText="true" />
+      <Button fx:id="miePrenotazioniB" layoutX="74.0" layoutY="253.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Mie prenotazioni" wrapText="true" />
+      <Button fx:id="modificaPrenotazioneB" layoutX="74.0" layoutY="319.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Modifica prenotazione" wrapText="true" />
       <Button fx:id="eliminaPrenotazioneB" layoutX="186.0" layoutY="319.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Elimina prenotazione" wrapText="true" />
-      <Button fx:id="visualizzaSessioniB" layoutX="293.0" layoutY="253.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="73.0" text="Visualizza sessioni" wrapText="true" />
+      <Button fx:id="visualizzaSessioniB" layoutX="188.0" layoutY="253.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="93.0" text="Visualizza sessioni" wrapText="true" />
       <Label layoutX="239.0" layoutY="14.0" text="Classrooms' Handler">
          <font>
             <Font size="36.0" />
